@@ -1,0 +1,5 @@
+webサーバー起動：python3 -m http.server 8080
+【※注意※】
+Commit, Pushをする前に，FirebaseSDKの設定部分は削除
+すること．ここを残してGitHubにアップロードしてしまうと
+第三者から勝手にFirebaseにアクセスされてしまう．

@@ -11,17 +11,17 @@
     </head>
     <body>
         <h1>システムプログラミング</h1>
-        
+        <p></p>
         <div>
             <ul id="messages"></ul>
             <input id="name" placeholder="名前">
             <!-- TODO1 ここにメッセージ入力フォームを追加 -->
+            <input id="message" placeholder="メッセージ">
             <!-- TODO1 ここに送信ボタンを追加 -->
-            
+            <button id=“send”>投稿</button>
         </div>
         <script>
             // TODO0 ここに設定情報を貼り付ける  
-            
             
             
             // データベースの参照を準備
@@ -30,6 +30,14 @@
             // TODO4 メッセージを表示
             
             // TODO2 送信ボタンが押された時の処理
+            $('#send').click(function() {
+                $('<p>追加しました</p>').appendTo('#messages');
+                messagesRef.add({
+                    name: $('#name').val(),
+                    body: $('#message').val()
+                });
+                
+            });
             
         </script>
     </body>
