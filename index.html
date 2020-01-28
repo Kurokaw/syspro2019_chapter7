@@ -18,11 +18,13 @@
             <!-- TODO1 ここにメッセージ入力フォームを追加 -->
             <input id="message" placeholder="メッセージ">
             <!-- TODO1 ここに送信ボタンを追加 -->
+            <input type="datetime-local" id="datetime">
             <button id="send">投稿</button>
         </div>
         <script>
             console.log("kakunin1");
             // TODO0 ここに設定情報を貼り付ける  
+            
             
             // データベースの参照を準備
             var messagesRef = firebase.firestore().collection('messages')
@@ -45,7 +47,8 @@
                 $('<p>追加しました</p>').appendTo('#messages');
                 messagesRef.add({
                     name: $('#name').val(),
-                    body: $('#message').val()
+                    body: $('#message').val(),
+                    datetime: $("#datetime").val()
                 });
                 
             });
